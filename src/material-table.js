@@ -98,10 +98,9 @@ export default class MaterialTable extends React.Component {
     }
 
     // If the columns changed and the defaultSorting differs from the current sorting, it will trigger a new sorting
-    const shouldReorder =
-      isInit ||
+    const shouldReorder = 
+          isInit &&
       (defaultSortColumnIndex !== this.dataManager.orderBy &&
-        !this.isRemoteData() &&
         defaultSortDirection !== this.dataManager.orderDirection);
     shouldReorder &&
       this.dataManager.changeOrder(
